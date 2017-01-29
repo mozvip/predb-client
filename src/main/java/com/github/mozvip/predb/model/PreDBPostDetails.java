@@ -12,6 +12,16 @@ public class PreDBPostDetails {
 	private String language;
 	private int season;
 	private int episode;
+	
+	private String baseUri;
+	
+	public PreDBPostDetails(String baseUri) {
+		this.baseUri = baseUri;
+	}
+	
+	public String baseUri() {
+		return baseUri;
+	}
 
 	public String getRlsName() {
 		return rlsName;

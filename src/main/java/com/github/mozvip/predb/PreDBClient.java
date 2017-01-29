@@ -85,7 +85,7 @@ public class PreDBClient {
 		HttpUrl url = response.raw().request().url();
 		Document document = Jsoup.parse( response.body().string(), url.toString() );
 		
-		PreDBPostDetails details = new PreDBPostDetails();
+		PreDBPostDetails details = new PreDBPostDetails( document.baseUri() );
 		
 		Elements terms = document.select("a.term");
 		
