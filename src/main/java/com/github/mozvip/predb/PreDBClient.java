@@ -87,6 +87,10 @@ public class PreDBClient {
 		
 		PreDBPostDetails details = new PreDBPostDetails( document.baseUri() );
 		
+		String rlsName = document.select("div.pb-l:contains(Rlsname)").first().nextElementSibling().text();
+		
+		details.setRlsName( rlsName );
+		
 		Elements terms = document.select("a.term");
 		
 		List<String> tags = new ArrayList<>();

@@ -2,6 +2,7 @@ package com.github.mozvip.predb;
 
 import java.util.Collection;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.github.mozvip.predb.model.PreDBCategory;
@@ -17,7 +18,7 @@ public class PreDBClientTest {
 		Collection<PreDBPost> resultsForPageTagsCats = predb.getPostsForPageTagsCats(1, null, PreDBCategory.MOVIES_HD);
 		for (PreDBPost preDBPost : resultsForPageTagsCats) {
 			PreDBPostDetails postDetails = predb.getPostDetails(  preDBPost.getId() );
-			
+			Assert.assertNotNull( postDetails.getRlsName() );
 		}
 	}
 
